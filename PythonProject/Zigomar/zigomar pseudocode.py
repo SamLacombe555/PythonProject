@@ -80,3 +80,5 @@ def tri_automatique(sac):
     return sac_filtré
 
 # Fin de la section William
+
+# Section Sam
