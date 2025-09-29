@@ -83,3 +83,26 @@ def tri_automatique(sac):
 # (Version 1.1)
 
 # Section Sam
+
+def melanger_sac(sac: list[str]):
+    sac_melange = random.shuffle(sac)
+    return sac_melange
+
+def attraper_objet(sac: list[str]):
+    objet_attrape = random.choice(sac)
+    return objet_attrape
+
+def deviner_objet(sac:list[str]):
+    objet_devine = random.choice(sac)
+    return objet_devine
+
+def reaction_deviner(objet_attrape:str, objet_devine:str):
+    if objet_attrape == objet_devine:
+        print("Yoopie! J'ai gagnée! Merci d'avoir jouer avec moi.")
+    if objet_attrape != objet_devine:
+        print("Hmm. Peu importe...")
+
+def reaction_maniaque(sac:list[str]):
+    sac = sac.sort()
+    print("ARGH! Mon sac est tout désorganisé! Tu dois tout replacer en ordre alphabétique!")
+    return sac
