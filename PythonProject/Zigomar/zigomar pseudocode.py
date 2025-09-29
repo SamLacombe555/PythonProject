@@ -22,7 +22,7 @@
 
 liste_item = 0
 
-"""
+
 afficher_sac() # Afficher le contenu du sac et l'ordre des 15 items dedans après chaque opération
 initialiser_sac() # Commencer avec potion/cle/boule/squelette (sac commence avec 4 items)
 ajouter_objets() # Ajout d'items dans le sac
@@ -50,3 +50,33 @@ tri_manuel() # Fonction manuelle: Retirer un seul item qu'on choisi nous même
 mini_quiz()
 
 tri_final() # Si pas en ordre alphabétique, fonction pour trier
+"""
+
+# Section William
+
+import random
+
+# Initialisation du sac avec les objets de départ
+def initialiser_sac():
+    return [
+        "potion scintillante",
+        "clé mystérieuse",
+        "boule brillante",
+        "squelette miniature"
+    ]
+
+# Ajout de nouveaux objets au sac
+def ajouter_objets(sac, nouveaux_objets):
+    for objet in nouveaux_objets:
+        sac.append(objet)
+    return sac
+
+# Tri automatique : retire les objets contenant un chiffre ou la lettre "b"
+def tri_automatique(sac):
+    sac_filtré = []
+    for objet in sac:
+        if not any(c.isdigit() or c.lower() == 'b' for c in objet):
+            sac_filtré.append(objet)
+    return sac_filtré
+
+# Fin de la section William
