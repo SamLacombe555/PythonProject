@@ -44,8 +44,12 @@ Contenu à retrouver dans vos projets :
 #SORTIES
 # - 4 trous à réponse (blanc et rouge)
 #FONCTIONS
-#- ls_couleurs = [J, B, R, V, O, N]
-
+# l = int   # ligne
+# c = int   # colonne
+# - ls_couleurs = [J, B, R, V, O, N]
+# - ls_grille_devinette = [
+#    ["_"]["_"],["_"]["_"], "*10"
+#   ]
 # - menu_couleurs()
     # print "0 - jaune"
     # print "1 - bleu"
@@ -53,16 +57,18 @@ Contenu à retrouver dans vos projets :
     # print "3 - vert"
     # print "4 - orange"
     # print "5 - noir"
+# If input not 0-5, print("Entrée invalide, veuillez recommencer") else break
 
 # - choix_couleurs()
     # choix = input int
     # couleur_choisi = ls_couleurs[choix]
     # return couleur_choisi
 
-# - assigne_couleur()
-    #
+# - assigne_couleur(couleur_choisi, lj)
+    # for i in range(len(ls_grille_devinette[lj])):
+        #
 
-# - Liste cachée
+# - Liste cachée (a.k.a liste_solution)
     # définir liste cachée vide
     # pour chaque colonne:
         # demande de choisir une couleur à désigner
@@ -94,5 +100,25 @@ WILL:
 SAM:
 """
 
+def menu_couleurs():
+    """
+
+    :return:
+    """
+    print "0 - Jaune"
+    print "1 - Bleu"
+    print "2 - Rouge"
+    print "3 - Vert"
+    print "4 - Orange"
+    print "5 - Noir"
 
 
+
+if __name__ == "__main__":
+
+liste_solution = []
+liste_solution_longeur = 4
+while len(liste_solution) < liste_solution_longeur:
+    couleur = input("Joueur 2, décidez quelle sera la combinaison de 4 couleurs gagnante. Entrez les couleurs une par une.")
+    liste_solution.append(couleur)
+    print(liste_solution)
