@@ -105,20 +105,20 @@ def menu_couleurs():
 
     :return:
     """
-    print "0 - Jaune"
-    print "1 - Bleu"
-    print "2 - Rouge"
-    print "3 - Vert"
-    print "4 - Orange"
-    print "5 - Noir"
+    print ("0 - Jaune")
+    print ("1 - Bleu")
+    print ("2 - Rouge")
+    print ("3 - Vert")
+    print ("4 - Orange")
+    print ("5 - Noir")
 
 
 
 if __name__ == "__main__":
 
-liste_solution = []
-liste_solution_longeur = 4
-while len(liste_solution) < liste_solution_longeur:
-    couleur = input("Joueur 2, décidez quelle sera la combinaison de 4 couleurs gagnante. Entrez les couleurs une par une.")
-    liste_solution.append(couleur)
-    print(liste_solution)
+    liste_solution = []
+    liste_solution_longeur = 4
+    while len(liste_solution) < liste_solution_longeur:
+        couleur = input("Joueur 2, décidez quelle sera la combinaison de 4 couleurs gagnante. Entrez les couleurs une par une.")
+        liste_solution.append(couleur)
+        print(liste_solution)
