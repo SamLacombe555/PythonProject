@@ -39,24 +39,27 @@ Contenu à retrouver dans vos projets :
 
 
 # ENTRÉES
-# - 4 trous x 10 rangées/essais (6 couleurs de billes: J, B, R, V, O, N)
-# - 4 trous à deviner (6 couleurs de billes: J, B, R, V, O, N)
+# - 4 trous x 10 rangées/essais (9 couleurs de billes: J, B, R, V, O, N, M, T, G)
+# - 4 trous à deviner (9 couleurs de billes: J, B, R, V, O, N, M, T, G)
 #SORTIES
 # - 4 trous à réponse (blanc et rouge)
 #FONCTIONS
 # l = int   # ligne
 # c = int   # colonne
-# - ls_couleurs = [J, B, R, V, O, N]
+# - ls_couleurs = [J, B, R, V, O, N, M, T, G]
 # - ls_grille_devinette = [
 #    ["_"]["_"],["_"]["_"], "*10"
 #   ]
 # - menu_couleurs()
-    # print "0 - jaune"
-    # print "1 - bleu"
-    # print "2 - rouge"
-    # print "3 - vert"
-    # print "4 - orange"
-    # print "5 - noir"
+    # print "1 - jaune"
+    # print "2 - bleu"
+    # print "3 - rouge"
+    # print "4 - vert"
+    # print "5 - orange"
+    # print "6 - noir"
+    # print "7 - mauve"
+    # print "8 - turquoise"
+    # print "9 - gris"
 # If input not 0-5, print("Entrée invalide, veuillez recommencer") else break
 
 # - choix_couleurs()
@@ -77,7 +80,7 @@ Contenu à retrouver dans vos projets :
 """
 - ENTRÉES -
 
-couleur_bille (valeurs peuvent être J, B, R, V, O, N) (joueur Décodeur peut en entrer 4 par essai)
+couleur_bille (valeurs peuvent être J, B, R, V, O, N, M, T, G) (joueur Décodeur peut en entrer 4 par essai)
 liste_solution (liste simple de 4 couleurs entrée par joueur Codificateur)
 
 - VALEURS -
@@ -105,14 +108,15 @@ def menu_couleurs():
 
     :return:
     """
-    print ("0 - Jaune")
-    print ("1 - Bleu")
-    print ("2 - Rouge")
-    print ("3 - Vert")
-    print ("4 - Orange")
-    print ("5 - Noir")
-
-
+    print ("1 - Jaune")
+    print ("2 - Bleu")
+    print ("3 - Rouge")
+    print ("4 - Vert")
+    print ("5 - Orange")
+    print ("6 - Noir")
+    print ("7 - Mauve")
+    print ("8 - Turquoise")
+    print ("9 - Gris")
 
 if __name__ == "__main__":
 
