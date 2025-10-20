@@ -21,9 +21,8 @@ liste_solution = ["_", "_", "_", "_"]
 
 round = 1
 
-afficher_jeu(board)
-board = assign_couleurs(board, round)
-afficher_jeu(board)
+afficher_jeu(board_j1,board_j2)
+
 
 """
 Jaune

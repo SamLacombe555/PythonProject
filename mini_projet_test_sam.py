@@ -1,7 +1,24 @@
-def afficher_jeu(board):
-    for ligne in board:
+def afficher_jeu(board_j1, board_j2):
+    for ligne in (board_j1 and board_j2):
         print(ligne)
-board = [
+board_j1 = [
+
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"]
+
+]
+
+board_j2 = [
 
     ["_", "_", "_", "_"],
     ["_", "_", "_", "_"],
@@ -23,18 +40,24 @@ liste_solution = ["_", "_", "_", "_"]
 def assign_couleurs(board, round):
     for i in range(4):
         choix = int(input(f"Sélectionne la couleur n-{i}"))
-        if choix == 0:
+        if choix == 1:
             choix_c = "J"
-        elif choix == 1:
-            choix_c = "B"
         elif choix == 2:
-            choix_c = "R"
+            choix_c = "B"
         elif choix == 3:
-            choix_c = "V"
+            choix_c = "R"
         elif choix == 4:
-            choix_c = "O"
+            choix_c = "V"
         elif choix == 5:
+            choix_c = "O"
+        elif choix == 6:
             choix_c = "N"
+        elif choix == 7:
+            choix_c = "M"
+        elif choix == 8:
+            choix_c = "T"
+        elif choix == 9:
+            choix_c = "G"
 
         board[round-1][i] = choix_c
     return board
@@ -55,6 +78,12 @@ def choisir_solution():
             choix_c = "O"
         elif choix == 6:
             choix_c = "N"
+        elif choix == 7:
+            choix_c = "M"
+        elif choix == 8:
+            choix_c = "T"
+        elif choix == 9:
+            choix_c = "G"
 
 
 
