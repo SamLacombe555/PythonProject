@@ -11,17 +11,17 @@
 |                         |                                                                                                    |                      |          |
 |                         |                                                                                                    |                      |          |
 |                         |                                                                                                    |                      |          |
-|                         | Fin du programme ()                                                                                |                      |          |
+| 27 Octobre 2025         | Fin du programme ()                                                                                | William/Samuel       |          |
 |                         |                                                                                                    |                      |          |
 |                         |                                                                                                    |                      |          |
 |                         |                                                                                                    |                      |          |
 |                         |                                                                                                    |                      |          |
-| ? Octobre/Novembre 2025 | Écrire les plans de tests                                                                          | William              |          |
-| ? Octobre/Novembre 2025 | Programmer les tests unitaires                                                                     | William              |          |
+| 28 Octobre 2025         | Écrire les plans de tests                                                                          | William              |          |
+| 29 Octobre 2025         | Programmer les tests unitaires                                                                     | William              |          |
 |                         |                                                                                                    |                      |          |
-| ? Octobre/Novembre 2025 | Vérifier pseudocode une dernière fois                                                              | William              |          |
-| ? Octobre/Novembre 2025 | Déboguer le programme                                                                              | William              |          |
-| ? Octobre/Novembre 2025 | Corriger le programme                                                                              | William/Samuel       |          |
-| ? Octobre/Novembre 2025 | Améliorer le programme?                                                                            | William/Samuel       |          |
-| ? Octobre/Novembre 2025 | Remettre le projet                                                                                 | Samuel               |          |
+| 30 Octobre 2025         | Vérifier pseudocode une dernière fois                                                              | William              |          |
+| 31 Octobre 2025         | Déboguer le programme                                                                              | William              |          |
+| 1 Novembre 2025         | Corriger le programme                                                                              | William/Samuel       |          |
+| 2 Novembre 2025         | Améliorer le programme?                                                                            | William/Samuel       |          |
+| 3 Novembre 2025         | Remettre le projet                                                                                 | Samuel               |          |
 | ? Octobre/Novembre 2025 | Présenter le projet                                                                                | William/Samuel       |          |
