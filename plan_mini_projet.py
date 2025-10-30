@@ -94,8 +94,13 @@ liste_2d_vide (liste 4x10 qui sera lentement remplie par joueur Décodeur)
 pions_indicatifs
 
 - FONCTIONS -
+intro_menu_choixjoueurs()
 menu_couleurs()
-choix_couleurs()
+afficher_jeu()
+assign_couleurs()
+choisir_solution()
+j2_verifie()
+joueur_versus_joueur()
 
 
 TÂCHES/FONCTIONS POUR CHAQUE MEMBRE:

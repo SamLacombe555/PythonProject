@@ -113,12 +113,18 @@ def menu_couleurs():
                 #count_blanc += 1
 
 
-def j2_verifie(board_j1:list, board_j2:list, liste_solution:list):
+def j2_verifie(board_j1:list, liste_solution:list):
     count_rouge = 0
     count_blanc = 0
     for i in range(4):
         if board_j1[round-1][i] in liste_solution:
-            if  board_j1.index(board_j1[round-1][i]) == liste_solution.index(choix):
+            if i == liste_solution.index(board_j1[round-1][i]):
+                count_rouge += 1
+            else:
+                count_blanc += 1
+    nouveau_board = board_j1[round-1].append(f"{count_rouge} rouges, {count_blanc} blancs")
+    return nouveau_board
+
 
 
 round = 1
