@@ -1,7 +1,6 @@
-def afficher_jeu(board_j1, board_j2):
-    j in board_j2
-    for i in board_j1:
-        print(i, in board_j2)
+def afficher_jeu(board_j1):
+    for ligne in board_j1:
+        print(ligne)
 board_j1 = [
 
     ["_", "_", "_", "_"], # + liste[0][1]append.str("1 pion et 1 pio")
@@ -64,7 +63,7 @@ def assign_couleurs(board, round):
     return board
 
 
-def choisir_solution():
+def choisir_solution(liste):
     for i in range(4):
         choix = int(input(f"Sélectionne la couleur n-{i}"))
         if choix == 1:
@@ -86,6 +85,8 @@ def choisir_solution():
         elif choix == 9:
             choix_c = "G"
 
+        liste[i] = choix_c
+    return liste
 
 
 
@@ -101,4 +102,24 @@ def menu_couleurs():
     print ("8 - Turquoise")
     print ("9 - Gris")
 
+#fonction j2 verifie une ligne
+    #count_rouge = 0
+    #count_blanc = 0
+    #for choix in board_j1 du round
+        #if choix in solution
+            #if index_choix_ligne_j1 == index_choix_solution
+                #count_rouge += 1
+            #else
+                #count_blanc += 1
+
+
+def j2_verifie(board_j1:list, board_j2:list, liste_solution:list):
+    count_rouge = 0
+    count_blanc = 0
+    for i in range(4):
+        if board_j1[round-1][i] in liste_solution:
+            if  board_j1.index(board_j1[round-1][i]) == liste_solution.index(choix):
+
+
 round = 1
+
