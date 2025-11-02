@@ -52,7 +52,7 @@
 # Entrées:
 # nom_codificateur (str): Nom du joueur codificateur
 # nom_decodeur (str): Nom du joueur décodeur
-# choix: L'entrée pour les différents menus de sélection. S'identifie par un chiffre
+# choix/choix_c: L'entrée pour les différents menus de sélection. S'identifie par un chiffre
 
 # Sorties:
 # liste_solution (liste simple de 4 couleurs entrée par joueur Codificateur ou générée par hazard par la fonction ordinateur_solution()
@@ -111,11 +111,11 @@ def intro_menu_choix_joueurs():
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
       """)
     time.sleep(1)
-    print("------------")
+    print("-" * 10)
     print("1 - JOUEUR versus CPU")
     print("2 - JOUEUR versus JOUEUR")
     print("3 - Comment jouer")
-    print("------------")
+    print("-" * 10)
     print("Veuillez taper un chiffre entre 1 et 3, et ensuite Entrée.")
 
 def comment_jouer():
@@ -123,7 +123,9 @@ def comment_jouer():
     Cette fonction fait apparaître le tutoriel du jeu.
     :return:
     """
-    print("Le but de ce jeu est de deviner correctement une combinaison de 4 couleurs.\nUn joueur (le codificateur) decide quelle sera la combinaison gagnante, et un deuxième joueur (le décodeur) tente de la trouver par essai-erreur.\nS'il devine correctement une couleur, un pion blanc est placé.\nS'il devine une couleur et qu'en plus elle est placée a la bonne position, un pion rouge est placé. Il a 12 essais en tout.")
+    print("-" * 10)
+    print("Le but de ce jeu est de deviner correctement une combinaison de 4 couleurs.\nUn joueur (le codificateur) decide quelle sera la combinaison gagnante, et un deuxième joueur (le décodeur) tente de la trouver par essai-erreur.\nSi une couleur est correctement devinée une couleur, un pion blanc est placé.\nSi une couleur est devinée et qu'en plus elle est placée à la bonne position, un pion rouge est placé.\n12 essais en tout sont permis.")
+    print("-" * 10)
     input(print("Veuillez taper Entrée pour retourner au menu."))
 
 
@@ -187,14 +189,14 @@ if __name__ == "__main__":
             nom_decodeur = str(input("Qui sera le joueur décodeur? Veuillez taper son nom, et ensuite Entrée."))
             joueur_versus_joueur()
             menu_couleurs()
-            choisir_solution(liste_solution)
+            choisir_solution(liste_solution) # Section Samuel
             print(liste_solution)
             if verification_liste(liste_solution) == False:
                 break
             print("Cette liste est-elle correcte? Répondez avec O ou N.")
             input_verification = input()
             if input_verification == 'N':
-                print(r"Tant pis ¯\_(ツ)_/¯")
+                print(r"Tant pis ¯\_(ツ)_/¯. Veuillez recommencer depuis le début.")
                 time.sleep(3)
             elif input_verification == 'O':
                 break
