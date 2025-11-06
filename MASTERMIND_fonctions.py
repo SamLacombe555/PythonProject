@@ -44,6 +44,8 @@ une fonction qui détecte s'il a tapé par accident le mauvais nombre de pions r
 
 import time, random
 
+from MASTERMIND import liste_couleurs_random
+
 round = 1
 liste_solution = ["_", "_", "_", "_"]
 liste_couleurs = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']
@@ -99,18 +101,6 @@ def assign_couleurs(board, round):
 
         board[round-1][i] = choix_c
     return board
-
-def j2_verifie(board_j1:list, liste_solution:list):
-    count_rouge = 0
-    count_blanc = 0
-    for i in range(4):
-        if board_j1[round-1][i] in liste_solution:
-            if i == liste_solution.index(board_j1[round-1][i]):
-                count_rouge += 1
-            else:
-                count_blanc += 1
-    nouveau_board = board_j1[round-1].append(f"{count_rouge} rouges, {count_blanc} blancs")
-    return nouveau_board
 
 def intro_menu_choix_joueurs():
     """
@@ -198,8 +188,9 @@ def ordinateur_solution():
     """
     liste_solution = []
     for i in range(4):
-        i = random.choice(liste_couleurs)
+        i = random.choice(liste_couleurs_random)
         liste_solution.append(i)
+        liste_couleurs_random.remove(i)
     return liste_solution
 
 def verification_liste(liste_solution):

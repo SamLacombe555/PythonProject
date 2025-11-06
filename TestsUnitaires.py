@@ -1,5 +1,5 @@
 import pytest
-import crypto as crypt
+import MASTERMIND_fonctions *
 
 @pytest.mark.parametrize("mots, longueur", [
     (["banane", "orange", "pomme"], 3),

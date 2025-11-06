@@ -177,6 +177,6 @@ while win_condition == 0:
 
     win_condition = verifier_fin(board,liste_solution)
 if win_condition == 1:
-    print("") # victoire
+    print("win") # victoire
 elif win_condition == 2:
-    print("") # défaite
+    print("lose") # défaite

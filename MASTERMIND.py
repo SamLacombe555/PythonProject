@@ -71,6 +71,7 @@ import time, random
 
 round = 1
 liste_solution = ["_", "_", "_", "_"]
+liste_couleurs_random = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']
 liste_couleurs = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']
 
 board = [
@@ -116,12 +117,25 @@ if __name__ == "__main__":
                 print(r"Tant pis ¯\_(ツ)_/¯. Veuillez recommencer depuis le début.")
                 time.sleep(3)
             elif input_verification == 'O':
+                print("\n" * 10)
                 break
             else:
                 print("Mauvaise entrée.")
         elif choix == "3":
             comment_jouer()
 
-    afficher_jeu(board)
-    assign_couleurs(board, round)
+    while win_condition == 0:
+        # boucle du jeux
+        afficher_jeu(board)
+        menu_couleurs()
+        board = assign_couleurs(board, round)
+        board = j2_verifie(board, liste_solution)
+        # fin de boucle
+        win_condition = verifier_fin(board, liste_solution)
+
+    if win_condition == 1:
+        print("win")  # victoire
+    elif win_condition == 2:
+        print("lose")  # défaite
+
 
