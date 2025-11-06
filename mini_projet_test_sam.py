@@ -1,7 +1,7 @@
 def afficher_jeu(board_j1):
     for ligne in board_j1:
         print(ligne)
-board_j1 = [
+board = [
 
     ["_", "_", "_", "_"], # + liste[0][1]append.str("1 pion et 1 pio")
     ["_", "_", "_", "_"],
@@ -114,6 +114,12 @@ def menu_couleurs():
 
 
 def j2_verifie(board_j1:list, liste_solution:list):
+    """
+    Fonction qui corrige la devinette du decodeur
+    :param board_j1: Le board que le décodeur peut voir et joue avec
+    :param liste_solution: La combinaison solution du codificateur
+    :return: Nouveau board contenant la devinette du décodeur et la correction du codificateur
+    """
     count_rouge = 0
     count_blanc = 0
     for i in range(4):
@@ -129,3 +135,48 @@ def j2_verifie(board_j1:list, liste_solution:list):
 
 round = 1
 
+
+# board_check definé vide
+# board_check.append(board[round-1][0]) de 0 à 3
+# if board_check == liste_solution
+    # return False
+# elif round == 13:
+    # return False
+# else:
+    # return True
+
+def verifier_fin(board, liste_solution):
+    """
+    Fonction qui vérifie si le jeux est fini
+    :param board: Le board qu'on joue avec
+    :param liste_solution: La solution du codificateur
+    :return: La fin ou continuation du jeux
+    """
+    board_check = []
+    for k in range(4):
+        board_check.append(board[round-1][k])
+    if board_check == liste_solution:
+        return 1
+    else:
+        round +=1
+        if round == 13:
+            return 2
+        else:
+            return 0
+    # Si ça retourne 1, le décodeur a gagné
+    # Si ça retourne 2, le décodeur a perdu
+    # Si ça retourn 0, le jeux n'est pas terminé et ça recommence
+
+
+
+
+
+
+while win_condition == 0:
+    # boucle du jeux
+
+    win_condition = verifier_fin(board,liste_solution)
+if win_condition == 1:
+    print("") # victoire
+elif win_condition == 2:
+    print("") # défaite
