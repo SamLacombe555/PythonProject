@@ -129,10 +129,11 @@ if __name__ == "__main__":
         afficher_jeu(board)
         menu_couleurs()
         board = assign_couleurs(board, round)
-        board = j2_verifie(board, liste_solution)
+        board = j2_verifie(board, liste_solution, round)
         # fin de boucle
-        win_condition = verifier_fin(board, liste_solution)
-
+        win_condition = verifier_fin(board, liste_solution, round)
+        round += 1
+    afficher_jeu(board)
     if win_condition == 1:
         print("win")  # victoire
     elif win_condition == 2:

@@ -203,29 +203,31 @@ def verification_liste(liste_solution):
         print("Votre liste est invalide. Veuillez redémarrer le programme et réessayer.")
         return False
 
-def j2_verifie(board_j1:list, liste_solution:list):
+def j2_verifie(board, liste_solution, round):
     """
     Fonction qui corrige la devinette du decodeur
-    :param board_j1: Le board que le décodeur peut voir et joue avec
+    :param board: Le board que le décodeur peut voir et joue avec
     :param liste_solution: La combinaison solution du codificateur
+    :param liste_solution: La ronde du jeux
     :return: Nouveau board contenant la devinette du décodeur et la correction du codificateur
     """
     count_rouge = 0
     count_blanc = 0
     for i in range(4):
-        if board_j1[round-1][i] in liste_solution:
-            if i == liste_solution.index(board_j1[round-1][i]):
+        if board[round-1][i] in liste_solution:
+            if i == liste_solution.index(board[round-1][i]):
                 count_rouge += 1
             else:
                 count_blanc += 1
-    nouveau_board = board_j1[round-1].append(f"{count_rouge} rouges, {count_blanc} blancs")
-    return nouveau_board
+    board[round-1].append(f"{count_rouge} rouges, {count_blanc} blancs")
+    return board
 
-def verifier_fin(board, liste_solution):
+def verifier_fin(board, liste_solution, round):
     """
     Fonction qui vérifie si le jeux est fini
     :param board: Le board qu'on joue avec
     :param liste_solution: La solution du codificateur
+    :param liste_solution: La ronde du jeux
     :return: La fin ou continuation du jeux
     """
     board_check = []
@@ -233,12 +235,10 @@ def verifier_fin(board, liste_solution):
         board_check.append(board[round-1][k])
     if board_check == liste_solution:
         return 1
+    elif round == 12:
+        return 2
     else:
-        round +=1
-        if round == 13:
-            return 2
-        else:
-            return 0
+        return 0
     # Si ça retourne 1, le décodeur a gagné
     # Si ça retourne 2, le décodeur a perdu
     # Si ça retourn 0, le jeux n'es

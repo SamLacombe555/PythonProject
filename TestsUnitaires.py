@@ -1,6 +1,35 @@
 import pytest
 import MASTERMIND_fonctions *
 
+@pytest.mark.parametrize
+
+def test_noms():
+    """
+    Cette fonction compare le nom que l'utilisateur a entré et le nom affiché dans nom_codificateur.
+    :return:
+    """
+    assert
+
+
+
+def test_couleurs_solution():
+    """
+    Cette fonction vérifie si liste_solution a 4 couleurs différentes ou non.
+    :return:
+    """
+    assert
+
+
+
+def test_pions():
+    """
+    Cette fonction teste si le nombre de pions rouges et blancs est exact.
+    :return:
+    """
+    assert
+
+
+
 @pytest.mark.parametrize("mots, longueur", [
     (["banane", "orange", "pomme"], 3),
     (["banane", "orange", "pomme", "sadlhaosd", "aksdas"], 5),
