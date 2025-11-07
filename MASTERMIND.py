@@ -69,7 +69,7 @@ Définir liste_couleurs
 
 import time, random
 
-round = 1
+round = int(1)
 liste_solution = ["_", "_", "_", "_"]
 liste_couleurs_random = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']
 liste_couleurs = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']

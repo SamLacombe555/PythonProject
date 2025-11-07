@@ -79,7 +79,7 @@ def assign_couleurs(board, round):
     :return: Le nouveau board avec la devinette du décodeur
     """
     for i in range(4):
-        choix = input(f"Décidez quelle sera la {i+1}e couleur :")
+        choix = int(input(f"Décidez quelle sera la {i+1}e couleur :"))
         if choix == 1:
             choix_c = "J"
         elif choix == 2:
