@@ -171,6 +171,7 @@ def menu_couleurs():
     Cette fonction fait apparaître le choix de combinaison de couleurs.
     :return:
     """
+    print("-" * 10)
     print ("1 - Jaune")
     print ("2 - Bleu")
     print ("3 - Rouge")
@@ -180,6 +181,7 @@ def menu_couleurs():
     print ("7 - Mauve")
     print ("8 - Turquoise")
     print ("9 - Gris")
+    print("-" * 10)
 
 def ordinateur_solution():
     """

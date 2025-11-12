@@ -105,7 +105,7 @@ if __name__ == "__main__":
             nom_decodeur = str(input("Qui sera le joueur décodeur? Veuillez taper son nom, et ensuite Entrée."))
             print(nom_decodeur + ", veuillez vous retourner et ne pas regarder l'écran.")
             time.sleep(5)
-            print(nom_codificateur + ", en vous servant du menu suivant, veuillez choisir une solution composée du combinaison de 4 couleurs.")
+            print(nom_codificateur + ", en vous servant du menu suivant, veuillez choisir une solution composée d'une combinaison de 4 couleurs.")
             menu_couleurs()
             choisir_solution(liste_solution)
             print(liste_solution)
@@ -117,7 +117,9 @@ if __name__ == "__main__":
                 print(r"Tant pis ¯\_(ツ)_/¯. Veuillez recommencer depuis le début.")
                 time.sleep(3)
             elif input_verification == 'O':
-                print("\n" * 10)
+                print("\n" * 20)
+                print(nom_decodeur + ", vous pouvez à présent regarder l'écran.")
+                time.sleep(5)
                 break
             else:
                 print("Mauvaise entrée.")
@@ -135,8 +137,11 @@ if __name__ == "__main__":
         round += 1
     afficher_jeu(board)
     if win_condition == 1:
-        print("win")  # victoire
+        print("-" * 10)
+        print(nom_decodeur + "à gagné en", round, "essais!")
+        # victoire
     elif win_condition == 2:
-        print("lose")  # défaite
+        print("Perdu. La solution était", liste_solution)  # défaite
+    print("Rejouer? O/N")
 
 
