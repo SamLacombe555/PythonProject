@@ -42,6 +42,12 @@ une fonction qui détecte s'il a tapé par accident le mauvais nombre de pions r
 #   S'il y a autre chose que les lettres acceptées, retourner un message d'erreur et False.
 # Fin
 
+# verifier_fin() : Vérifie si le jeux est fini
+# Entrées: board, liste_solution, round
+# Sorties: 0, 1 ou 2
+# Début:
+#   Si la
+
 import time, random
 
 from MASTERMIND import liste_couleurs_random
@@ -68,38 +74,55 @@ board = [
 liste_solution = ["_", "_", "_", "_"]
 
 def afficher_jeu(board_j1):
+    """
+    Fonction qui affiche le board de jeux
+    :param board_j1: Le board de jeux
+    :return:
+    """
     for ligne in board_j1:
         print(ligne)
 
 def assign_couleurs(board, round):
     """
-    Fonction qui modifie le board du décodeur avec ses choix de couleurs
+    Fonction qui modifie le board du décodeur avec ses choix de couleurs.
     :param board: Board du décodeur avec ses devinettes
     :param round: Le nombre de ronde jouer par le décodeur
     :return: Le nouveau board avec la devinette du décodeur
     """
     for i in range(4):
-        choix = int(input(f"Décidez quelle sera la {i+1}e couleur :"))
-        if choix == 1:
-            choix_c = "J"
-        elif choix == 2:
-            choix_c = "B"
-        elif choix == 3:
-            choix_c = "R"
-        elif choix == 4:
-            choix_c = "V"
-        elif choix == 5:
-            choix_c = "O"
-        elif choix == 6:
-            choix_c = "N"
-        elif choix == 7:
-            choix_c = "M"
-        elif choix == 8:
-            choix_c = "T"
-        elif choix == 9:
-            choix_c = "G"
+        deux_couleurs = True
+        while deux_couleurs == True:
+            choix = int(input(f"Décidez quelle sera la {i+1}e couleur :"))
+            if choix == 1:
+                choix_c = "J"
+            elif choix == 2:
+                choix_c = "B"
+            elif choix == 3:
+                choix_c = "R"
+            elif choix == 4:
+                choix_c = "V"
+            elif choix == 5:
+                choix_c = "O"
+            elif choix == 6:
+                choix_c = "N"
+            elif choix == 7:
+                choix_c = "M"
+            elif choix == 8:
+                choix_c = "T"
+            elif choix == 9:
+                choix_c = "G"
+            else:
+                choix_c ="_"
 
-        board[round-1][i] = choix_c
+            if choix_c == "_":
+                print("Veuillez entrer un choix valide.")
+                deux_couleurs = True
+            elif choix_c in board[round-1]:
+                print("La solution ne contient pas deux fois la même couleur.")
+                deux_couleurs = True
+            else:
+                board[round-1][i] = choix_c
+                deux_couleurs = False
     return board
 
 def intro_menu_choix_joueurs():
@@ -141,30 +164,45 @@ def choisir_solution(liste_solution):
     :return:
     """
     for i in range(4):
-        choix = input(f"Décidez quelle sera la {i+1}e couleur :")
-        if choix == '1':
-            choix_c = "J"
-        elif choix == '2':
-            choix_c = "B"
-        elif choix == '3':
-            choix_c = "R"
-        elif choix == '4':
-            choix_c = "V"
-        elif choix == '5':
-            choix_c = "O"
-        elif choix == '6':
-            choix_c = "N"
-        elif choix == '7':
-            choix_c = "M"
-        elif choix == '8':
-            choix_c = "T"
-        elif choix == '9':
-            choix_c = "G"
-        else:
-            break
+        deux_couleurs = True
+        while deux_couleurs == True:
+            choix = input(f"Décidez quelle sera la {i+1}e couleur :")
+            if choix == '1':
+                choix_c = "J"
+            elif choix == '2':
+                choix_c = "B"
+            elif choix == '3':
+                choix_c = "R"
+            elif choix == '4':
+                choix_c = "V"
+            elif choix == '5':
+                choix_c = "O"
+            elif choix == '6':
+                choix_c = "N"
+            elif choix == '7':
+                choix_c = "M"
+            elif choix == '8':
+                choix_c = "T"
+            elif choix == '9':
+                choix_c = "G"
+            else:
+                break
 
-        liste_solution[i] = choix_c
+            if choix_c in liste_solution:
+                print("La solution ne peut pas contenir deux fois la même couleur.")
+                deux_couleurs = True
+            else:
+                liste_solution[i] = choix_c
+                deux_couleurs = False
+
     return liste_solution
+
+def verifier_2_couleurs():
+    """
+    Cette fonction vérifie si le joueur codificateur a tapé 2 fois la même couleur, et dans le cas échéant, lui refuse le choix.
+    :return:
+    """
+
 
 def menu_couleurs():
     """
@@ -213,8 +251,8 @@ def j2_verifie(board, liste_solution, round):
     :param liste_solution: La ronde du jeux
     :return: Nouveau board contenant la devinette du décodeur et la correction du codificateur
     """
-    count_rouge = 0
-    count_blanc = 0
+    count_rouge = 0 #le nombre de bonne couleur au bon endroit
+    count_blanc = 0 #le nombre de bonne couleur dans le mauvais endroit
     for i in range(4):
         if board[round-1][i] in liste_solution:
             if i == liste_solution.index(board[round-1][i]):
@@ -232,7 +270,7 @@ def verifier_fin(board, liste_solution, round):
     :param liste_solution: La ronde du jeux
     :return: La fin ou continuation du jeux
     """
-    board_check = []
+    board_check = [] #board temporaire contenant seulement la ligne horizontale correspondant au round
     for k in range(4):
         board_check.append(board[round-1][k])
     if board_check == liste_solution:

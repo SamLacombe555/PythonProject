@@ -1,5 +1,5 @@
 import pytest
-import MASTERMIND_fonctions *
+from MASTERMIND_fonctions import *
 
 @pytest.mark.parametrize
 
@@ -8,8 +8,9 @@ def test_noms():
     Cette fonction compare le nom que l'utilisateur a entré et le nom affiché dans nom_codificateur.
     :return:
     """
-    assert
-
+    nom_codificateur = "Sam"
+    input() = "Sam"
+    assert nom_codificateur = input
 
 
 def test_couleurs_solution():
@@ -17,6 +18,7 @@ def test_couleurs_solution():
     Cette fonction vérifie si liste_solution a 4 couleurs différentes ou non.
     :return:
     """
+
     assert
 
 

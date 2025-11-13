@@ -130,8 +130,8 @@ if __name__ == "__main__":
         # boucle du jeux
         afficher_jeu(board)
         menu_couleurs()
-        board = assign_couleurs(board, round)
-        board = j2_verifie(board, liste_solution, round)
+        board = assign_couleurs(board, round) #board du jeux modifier avec les choix du joueur 1
+        board = j2_verifie(board, liste_solution, round) #board du jeux modifier avec les nouveaux indices du joueur 2
         # fin de boucle
         win_condition = verifier_fin(board, liste_solution, round)
         round += 1
