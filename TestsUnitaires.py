@@ -1,7 +1,28 @@
-import pytest
+from pytest import *
 from MASTERMIND_fonctions import *
 
-@pytest.mark.parametrize
+round = 1
+liste_solution = ["_", "_", "_", "_"]
+liste_couleurs = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']
+board = [
+
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"]
+
+]
+
+liste_couleurs_random = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']
+
 
 def test_noms():
     """
@@ -9,17 +30,21 @@ def test_noms():
     :return:
     """
     nom_codificateur = "Sam"
-    input() = "Sam"
-    assert nom_codificateur = input
-
+    str_input_joueur = "Sam"
+    assert nom_codificateur == str_input_joueur
 
 def test_couleurs_solution():
     """
-    Cette fonction vérifie si liste_solution a 4 couleurs différentes ou non.
+    Cette fonction prévient d'avoir 2 couleurs pareilles dans la liste solution.
     :return:
     """
-
-    assert
+    liste_solution = ['J', 'B', 'R', '_']
+    choix_c = "R"
+    if choix_c in liste_solution:
+        print("La solution ne peut pas contenir deux fois la même couleur.")
+        deux_couleurs = True
+    resultat = deux_couleurs
+    assert resultat == True
 
 
 
@@ -28,108 +53,64 @@ def test_pions():
     Cette fonction teste si le nombre de pions rouges et blancs est exact.
     :return:
     """
-    assert
+    liste_solution = ['J', 'B', 'R', 'V']
+    board = [
 
+    ["J", "B", "V", "R"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"]
 
+]
+    round = 1
+    resultat = j2_verifie(board,liste_solution,round)
+    assert resultat == [
 
-@pytest.mark.parametrize("mots, longueur", [
-    (["banane", "orange", "pomme"], 3),
-    (["banane", "orange", "pomme", "sadlhaosd", "aksdas"], 5),
-    (["banane", "orange"], 2),
-    ([], 0)
-])
-def test_hasher_mots(mots, longueur):
+    ["J", "B", "V", "R", "2 rouge(s), 2 blanc(s)"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"],
+    ["_", "_", "_", "_"]
 
-    dict_hash = crypt.hasher_mots(mots)
+]
 
-    assert isinstance(dict_hash, dict)
-    assert len(dict_hash) == longueur
-    if len(dict_hash) != 0:
-        assert len(dict_hash[mots[0]]) == 3
-
-
-@pytest.mark.parametrize("initial, nb_cesar, chaine_attendue",[
-    ("abcde", 2, "cdefg"),
-    ("abcde", 0, "abcde"),
-    ("abcde", 10, "klmno"),
-    ("abcde", 26, "abcde"),
-    ("cdefg", -2, "abcde"),
-    ("zoo", 3, "crr")
-])
-def test_chiffrement_cesar(initial, nb_cesar, chaine_attendue):
-
-    chaine_cesar = crypt.chiffrement_cesar(initial, nb_cesar)
-
-    assert isinstance(chaine_cesar, str)
-    assert len(chaine_cesar) == len(initial)
-    assert chaine_cesar == chaine_attendue
-
-
-
-
-
-
-
-def calcul_pv(joueur_pv: int, joueur_def: int, attack: int) -> str:
+def test_win_condition():
     """
-
-    :param joueur_pv: C'est les PVs du joueur défendant
-    :param joueur_def: C'est la Déffence du joueur défendant
-    :param attack: C'est l'attaque du joueur attaquant
-    :return: Retourne un str qui dit combien le défendant a pris de domages et combien il lui reste de pv
+    Cette fonction vérifie si la partie a été gagné par le joueur décodeur.
+    :return:
     """
-    attack -= joueur_def
-    joueur_pv -= attack
-    return f"Le joueur defendant a pris {attack} points de dommage, et lui reste {joueur_pv} points de vie!"
+    liste_solution = ['J', 'B', 'R', 'V']
+    round = 12
+    board = [
 
-import pytest
-import fctListes as moyenne
+    ['J', 'R', 'V', 'O', '1 rouge(s), 2 blanc(s)'],
+    ['G', 'T', 'M', 'N', '0 rouge(s), 0 blanc(s)'],
+    ['T', 'M', 'N', 'O', '0 rouge(s), 0 blanc(s)'],
+    ['M', 'N', 'O', 'V', '1 rouge(s), 0 blanc(s)'],
+    ['N', 'O', 'V', 'R', '0 rouge(s), 2 blanc(s)'],
+    ['O', 'V', 'R', 'B', '1 rouge(s), 2 blanc(s)'],
+    ['V', 'R', 'B', 'J', '0 rouge(s), 4 blanc(s)'],
+    ['R', 'B', 'J', 'G', '1 rouge(s), 2 blanc(s)'],
+    ['B', 'J', 'G', 'T', '0 rouge(s), 2 blanc(s)'],
+    ['J', 'G', 'T', 'M', '1 rouge(s), 0 blanc(s)'],
+    ['O', 'N', 'M', 'T', '0 rouge(s), 0 blanc(s)'],
+    ['J', 'B', 'R', 'V']
 
-@pytest.mark.parametrize("j1, j2, resultat_attendu", [
-    ("roche", "ciseau", "joueur 1 gagne avec roche."),
-    ("roche", "papier", "joueur 2 gagne avec papier."),
-    ("Roche", "Papier", "joueur 2 gagne avec Papier.")
-])
-def test_moyenne(moyenne_rouge, moyenne_vert, moyenne_bleu):
-    # Arrange
-    resultat_attendu = 3
-    # Act
-    resultat_division = moyenne(moyenne_rouge, moyenne_vert, moyenne_bleu)
-
-    # Assert
-    assert resultat_division == resultat_attendu
-
-# (William qui teste le programme de Sam)
-
-import pytest
-from fctListes import pourcentage
-
-def choix_couleur_1_invalide()
-    # Arrange
-    choix_couleur_1 = hdggj
-    # Act
-    result = choix_couleur_1_invalide(choix_couleur_1)
-    # Assert
-    assert not result
-def choix_couleur_1_valide()
-    # Arrange
-    choix_couleur_1 = rouge
-    # Act
-    result = choix_couleur_1_valide(choix_couleur_1)
-    # Assert
-    assert not result
-
-def montant_lego_choisi_invalide()
-    # Arrange
-    montant_lego_choisi = dfghsfg
-    # Act
-    result = montant_lego_choisi_invalide(montant_lego_choisi)
-    # Assert
-    assert not result
-def montant_lego_choisi_valide()
-    # Arrange
-    montant_lego_choisi = 5
-    # Act
-    result = montant_lego_choisi_valide(montant_lego_choisi)
-    # Assert
-    assert not result
+    ]
+    resultat = verifier_fin(board, liste_solution, round)
+    assert resultat == 1

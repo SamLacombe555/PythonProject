@@ -13,13 +13,13 @@
 | 30 Octobre 2025         | Fonction joueur_versus_joueur()                                                                    | William              | Complété |
 | 27 Octobre 2025         | Fin du programme ()                                                                                | William/Samuel       | En cours |
 | 31 Octobre 2025         | Fonction ordinateur_solution()                                                                     | William              | Complété |
-| 31 Octobre 2025         | Fonction verification_liste()                                                                      | William              | Complété |
+| 31 Octobre 2025         | Fonction verification_liste()                                                                      | Samuel               | Complété |
 | 1 Novembre 2025         | liste_couleurs                                                                                     | William              | Complété |
 | 1 Novembre 2025         | nom_codificateur/décodeur                                                                          | William              | Complété |
 | 28 Octobre 2025         | Écrire les plans de tests                                                                          | William              | En cours |
-| 29 Octobre 2025         | Programmer les tests unitaires                                                                     | William              | En cours |
+| 29 Octobre 2025         | Programmer les tests unitaires                                                                     | Samuel/William       | En cours |
 | 2 Novembre 2025         | Modules time/random                                                                                | William              | Complété |
-| 30 Octobre 2025         | Vérifier pseudocode une dernière fois                                                              | William              | En cours |
+| 30 Octobre 2025         | Vérifier pseudocode une dernière fois                                                              | Samuel/William       | En cours |
 | 31 Octobre 2025         | Déboguer le programme                                                                              | William              | En cours |
 | 1 Novembre 2025         | Corriger le programme                                                                              | William/Samuel       | En cours |
 | 2 Novembre 2025         | Améliorer le programme?                                                                            | William/Samuel       | En cours |

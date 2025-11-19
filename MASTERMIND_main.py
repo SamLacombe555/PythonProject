@@ -1,27 +1,5 @@
 from MASTERMIND_fonctions import *
 
-"""
-A DOCUMENTER (SAM)
-
-afficher_jeu()
-assign_couleurs()
-
-ligne
-board_j1 (liste)
-board_j2 (liste)
-j2_verifie
-board
-nouveau_board
-round
-count_rouge
-rouges
-count_blanc
-blancs
-
-+ PSEUDOCODE
-
-"""
-
 # - PSEUDOCODE
 
 # Entrées:
@@ -38,7 +16,6 @@ blancs
 
 """
 Programme principal:
-Définir liste_couleurs
 
     boucle
         intro_menu_choix_joueurs()
@@ -63,21 +40,15 @@ Définir liste_couleurs
             sinon:
                 print("Mauvaise entrée.")
         si choix est égal à 3:
-            comment_jouer()
-
-"""
-
-"""
-PROGRAMME DU JEUX 
-    
+            comment_jouer()  
     boucle:
-        fonction qui print la table de jeux 
-        fonction qui print les choix de couleurs au décodeur 
+        fonction qui print la table de jeu 
+        fonction qui print les choix de couleurs du décodeur 
         fonction qui modifie la table de jeux accordement avec les choix du décodeur
         fonction qui corrige la table de jeux accordement avec la solution choisi par le codificateur
-        fonction qui vérifie si le jeux est terminé et qui terminera la boucle 
-        ajouter 1 au compte de round 
-    fonction qui print la table de jeux 
+        fonction qui vérifie si le jeu est terminé et qui terminera la boucle 
+        ajouter 1 au comptage de rond 
+    fonction qui print la table de jeu 
     si le jeu fini car le décodeur a gagné:
         print espace
         print que le décodeur à gagné avec telle essay
@@ -85,9 +56,9 @@ PROGRAMME DU JEUX
     print que le décodeur a perdu
 """
 
-import time, random
+import time
 
-round = int(1)
+round = int(1) #le comptage du rond courant
 liste_solution = ["_", "_", "_", "_"]
 liste_couleurs_random = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']
 liste_couleurs = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']
@@ -108,7 +79,7 @@ board = [
     ["_", "_", "_", "_"]
 
 ]
-win_condition = 0
+win_condition = 0 #condition de victoire
 
 if __name__ == "__main__":
 
@@ -116,19 +87,19 @@ if __name__ == "__main__":
         intro_menu_choix_joueurs()
         choix = input()
         if choix == "1":
-            liste_solution = ordinateur_solution()
+            liste_solution = ordinateur_solution(liste_couleurs_random)
             nom_decodeur = "Le décodeur"
             break
         elif choix == "2":
             nom_codificateur = str(input("Qui sera le joueur codificateur? Veuillez taper son nom, et ensuite Entrée."))
             nom_decodeur = str(input("Qui sera le joueur décodeur? Veuillez taper son nom, et ensuite Entrée."))
-            print(nom_decodeur + ", veuillez vous retourner et ne pas regarder l'écran.")
+            print(f"{nom_decodeur}, veuillez vous retourner et ne pas regarder l'écran.")
             time.sleep(5)
-            print(nom_codificateur + ", en vous servant du menu suivant, veuillez choisir une solution composée d'une combinaison de 4 couleurs.")
+            print(f"{nom_codificateur}, en vous servant du menu suivant, veuillez choisir une solution composée d'une combinaison de 4 couleurs.")
             menu_couleurs()
             choisir_solution(liste_solution)
             print(liste_solution)
-            if verification_liste(liste_solution) == False:
+            if not verification_liste(liste_solution):
                 break
             print("Cette liste est-elle correcte? Répondez avec O ou N.")
             input_verification = input()
