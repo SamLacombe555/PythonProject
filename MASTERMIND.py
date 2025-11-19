@@ -139,10 +139,10 @@ if __name__ == "__main__":
     afficher_jeu(board)
     if win_condition == 1:
         print("-" * 10)
-        print(nom_decodeur + "à gagné en", round, "essais!")
+        print(f"{nom_decodeur} a gagné en {round} essais!")
         # victoire
     elif win_condition == 2:
-        print("Perdu. La solution était", liste_solution)  # défaite
+        print(f"Perdu. La solution était {liste_solution}")  # défaite
     print("Rejouer? O/N")
 
 
