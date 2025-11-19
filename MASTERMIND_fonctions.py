@@ -130,6 +130,7 @@ def intro_menu_choix_joueurs():
     Cette fonction fait apparaître le menu du jeu.
     :return:
     """
+    #TODO Réf:
     print(r"""
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━				    
      ███    ███  █████  ███████ ████████ ███████ ██████  ███    ███ ██ ███    ██ ██████  
@@ -197,13 +198,6 @@ def choisir_solution(liste_solution):
 
     return liste_solution
 
-def verifier_2_couleurs():
-    """
-    Cette fonction vérifie si le joueur codificateur a tapé 2 fois la même couleur, et dans le cas échéant, lui refuse le choix.
-    :return:
-    """
-
-
 def menu_couleurs():
     """
     Cette fonction fait apparaître le choix de combinaison de couleurs.
@@ -223,8 +217,8 @@ def menu_couleurs():
 
 def ordinateur_solution():
     """
-    Cette fonction génère une solution au hazard.
-    :return:
+    Cette fonction génère une solution au hasard.
+    :return: solution générer à l'hasard
     """
     liste_solution = []
     for i in range(4):
@@ -236,8 +230,8 @@ def ordinateur_solution():
 def verification_liste(liste_solution):
     """
     Cette fonction vérifie si l'utilisateur a inséré des entrées valides pour la liste.
-    :param liste_solution:
-    :return:
+    :param liste_solution: la solution que le décodeur doit deviner
+    :return: si non-valide, il l'annonce au joueur et au programme
     """
     if '_' in liste_solution:
         print("Votre liste est invalide. Veuillez redémarrer le programme et réessayer.")
@@ -248,11 +242,11 @@ def j2_verifie(board, liste_solution, round):
     Fonction qui corrige la devinette du decodeur
     :param board: Le board que le décodeur peut voir et joue avec
     :param liste_solution: La combinaison solution du codificateur
-    :param liste_solution: La ronde du jeux
+    :param liste_solution: La ronde du jeu
     :return: Nouveau board contenant la devinette du décodeur et la correction du codificateur
     """
-    count_rouge = 0 #le nombre de bonne couleur au bon endroit
-    count_blanc = 0 #le nombre de bonne couleur dans le mauvais endroit
+    count_rouge = 0 #le nombre de bonnes couleurs au bon endroit
+    count_blanc = 0 #le nombre de bonnes couleurs dans le mauvais endroit
     for i in range(4):
         if board[round-1][i] in liste_solution:
             if i == liste_solution.index(board[round-1][i]):
@@ -264,11 +258,11 @@ def j2_verifie(board, liste_solution, round):
 
 def verifier_fin(board, liste_solution, round):
     """
-    Fonction qui vérifie si le jeux est fini
+    Fonction qui vérifie si le jeu est fini
     :param board: Le board qu'on joue avec
     :param liste_solution: La solution du codificateur
     :param liste_solution: La ronde du jeux
-    :return: La fin ou continuation du jeux
+    :return: La fin ou continuation du jeu
     """
     board_check = [] #board temporaire contenant seulement la ligne horizontale correspondant au round
     for k in range(4):

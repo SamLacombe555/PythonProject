@@ -67,6 +67,24 @@ Définir liste_couleurs
 
 """
 
+"""
+PROGRAMME DU JEUX 
+    
+    boucle:
+        fonction qui print la table de jeux 
+        fonction qui print les choix de couleurs au décodeur 
+        fonction qui modifie la table de jeux accordement avec les choix du décodeur
+        fonction qui corrige la table de jeux accordement avec la solution choisi par le codificateur
+        fonction qui vérifie si le jeux est terminé et qui terminera la boucle 
+        ajouter 1 au compte de round 
+    fonction qui print la table de jeux 
+    si le jeu fini car le décodeur a gagné:
+        print espace
+        print que le décodeur à gagné avec telle essay
+    sinon, si le jeu fini car le décodeur a perdu:
+    print que le décodeur a perdu
+"""
+
 import time, random
 
 round = int(1)
@@ -76,7 +94,7 @@ liste_couleurs = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']
 
 board = [
 
-    ["_", "_", "_", "_"], # + liste[0][1]append.str("1 pion et 1 pio")
+    ["_", "_", "_", "_"],
     ["_", "_", "_", "_"],
     ["_", "_", "_", "_"],
     ["_", "_", "_", "_"],
@@ -128,21 +146,18 @@ if __name__ == "__main__":
             comment_jouer()
 
     while win_condition == 0:
-        # boucle du jeux
         afficher_jeu(board)
         menu_couleurs()
-        board = assign_couleurs(board, round) #board du jeux modifier avec les choix du joueur 1
-        board = j2_verifie(board, liste_solution, round) #board du jeux modifier avec les nouveaux indices du joueur 2
-        # fin de boucle
+        board = assign_couleurs(board, round)
+        board = j2_verifie(board, liste_solution, round)
         win_condition = verifier_fin(board, liste_solution, round)
         round += 1
     afficher_jeu(board)
     if win_condition == 1:
         print("-" * 10)
         print(f"{nom_decodeur} a gagné en {round} essais!")
-        # victoire
     elif win_condition == 2:
-        print(f"Perdu. La solution était {liste_solution}")  # défaite
+        print(f"Perdu. La solution était {liste_solution}")
     print("Rejouer? O/N")
 
 
