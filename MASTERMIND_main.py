@@ -8,10 +8,13 @@ from MASTERMIND_fonctions import *
 # choix/choix_c: L'entrée pour les différents menus de sélection. S'identifie par un chiffre
 
 # Sorties:
-# liste_solution (liste simple de 4 couleurs entrée par joueur Codificateur ou générée par hazard par la fonction ordinateur_solution()
+# liste_solution (liste simple de 4 couleurs entrée par le joueur codificateur ou générée par hazard par la fonction ordinateur_solution()
+
+# Fonctions:
+# Documentées dans le fichier MASTERMIND_fonctions.py
 
 # Modules:
-# Time: Purement pour petit effet esthétique
+# Time: Purement pour effet esthétique
 # Random: Pour générer une liste au hazard dans la fonction ordinateur_solution()
 
 """
@@ -56,7 +59,9 @@ Programme principal:
     print que le décodeur a perdu
 """
 
+
 import time
+
 
 round = int(1) #le comptage du rond courant
 liste_solution = ["_", "_", "_", "_"]

@@ -16,6 +16,12 @@ Contenu à retrouver dans vos projets :
 9.	Remise et présentations du mini projet le jeudi 20 novembre 2025 (5%)
 """
 
+"""
+JOUEUR versus CPU : Là, c'est le programme qui explique au joueur décodeur combien de pions rouges/blancs qu'il a.
+JOUEUR versus JOUEUR : Ici, c'est le joueur codificateur qui doit réfléchir et taper combien de pions rouges/blancs qu'il reste au joueur décodeur, MAIS on a
+une fonction qui détecte s'il a tapé par accident le mauvais nombre de pions rouges/blancs, et le programme le lui dit jusqu'a temps qu'il tape le bon nombre de pions.
+"""
+
 # Mastermind:
 
 # PRÉ-PSEUDO
