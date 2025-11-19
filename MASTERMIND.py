@@ -99,6 +99,7 @@ if __name__ == "__main__":
         choix = input()
         if choix == "1":
             liste_solution = ordinateur_solution()
+            nom_decodeur = "Le décodeur"
             break
         elif choix == "2":
             nom_codificateur = str(input("Qui sera le joueur codificateur? Veuillez taper son nom, et ensuite Entrée."))
