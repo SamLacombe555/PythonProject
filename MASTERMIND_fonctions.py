@@ -36,11 +36,34 @@
 #   S'il y a autre chose que les lettres acceptées, retourner un message d'erreur et False.
 # Fin
 
+# j2_verifie(): Ajoute les pions rouges et blancs à l'essai du joueur Décodeur.
+# Entrées: count_rouge: le nombre de bonnes couleurs au bon endroit
+#          count_blanc: le nombre de bonnes couleurs dans le mauvais endroit
+# Sorties: round
+# Début:
+#   Boucle quatre:
+#       vérifie couleurs au bons endroits
+#       vérifie couleurs au mauvais endroits
+#   insère les données de pions dans board
+# retourner board
+# Fin
+
+
+
 # verifier_fin() : Vérifie si le jeu est fini
 # Entrées: board, liste_solution, round
 # Sorties: 0, 1 ou 2
 # Début:
-#   Si la
+# Boucle 4
+#   vérifie le jeu selon le nombre de rounds
+# Si board_check égal liste_solution
+#   retourner 1
+# Si round égal à 12
+#   retourner 2
+# Si autre
+#   retourner 0
+# retourner
+# Fin
 
 # - Importer les modules -
 import time, random
@@ -128,7 +151,7 @@ def comment_jouer():
     :return:
     """
     print("-" * 10)
-    print("Le but de ce jeu est de deviner correctement une combinaison de 4 couleurs.\nUn joueur (le codificateur) decide quelle sera la combinaison gagnante, et un deuxième joueur (le décodeur) tente de la trouver par essai-erreur.\nSi une couleur est correctement devinée une couleur, un pion blanc est placé.\nSi une couleur est devinée et qu'en plus elle est placée à la bonne position, un pion rouge est placé.\n12 essais en tout sont permis.\nAstuce: La solution ne peut pas contenir plus de 2 couleurs\nBonne chance!")
+    print("Le but de ce jeu est de deviner correctement une combinaison de 4 couleurs.\nUn joueur (le codificateur) decide quelle sera la combinaison gagnante, et un deuxième joueur (le décodeur) tente de la trouver par essai-erreur.\nSi une couleur est correctement devinée, un pion blanc est placé.\nSi une couleur est devinée et qu'en plus elle est placée à la bonne position, un pion rouge est placé.\n12 essais en tout sont permis.\nAstuce: La solution ne peut pas contenir plus de 2 couleurs.\nBonne chance!")
     print("-" * 10)
     input(print("Veuillez taper Entrée pour retourner au menu."))
 
@@ -250,4 +273,4 @@ def verifier_fin(board, liste_solution, round):
         return 0
     # Si ça retourne 1, le décodeur a gagné
     # Si ça retourne 2, le décodeur a perdu
-    # Si ça retourn 0, le jeu n'est pas terminé
+    # Si ça retourne 0, le jeu n'est pas terminé
