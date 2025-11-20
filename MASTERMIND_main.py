@@ -59,10 +59,6 @@ Programme principal:
     print que le décodeur a perdu
 """
 
-
-import time
-
-
 round = int(1) #le comptage du rond courant
 liste_solution = ["_", "_", "_", "_"]
 liste_couleurs_random = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']

@@ -1,4 +1,3 @@
-
 # FONCTIONS:
 
 # intro_menu_choix_joueurs(): Fait apparaître le menu du jeu.
@@ -43,6 +42,7 @@
 # Début:
 #   Si la
 
+# - Importer les modules -
 import time, random
 
 
@@ -104,7 +104,7 @@ def intro_menu_choix_joueurs():
     Cette fonction fait apparaître le menu du jeu.
     :return:
     """
-    # Réf: https://patorjk.com/
+    # Référence art ASCII: https://patorjk.com/
     print(r"""
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━				    
      ███    ███  █████  ███████ ████████ ███████ ██████  ███    ███ ██ ███    ██ ██████  
@@ -193,7 +193,7 @@ def ordinateur_solution(liste_couleurs_random):
     """
     Cette fonction génère une solution au hasard.
     :param liste_couleurs_random: la liste de couleurs qui peuvent être choisi par hasard
-    :return: solution générée par hasard
+    :return: solution générée au hasard
     """
     liste_solution = []
     for i in range(4):
@@ -204,7 +204,7 @@ def ordinateur_solution(liste_couleurs_random):
 
 def verification_liste(liste_solution):
     """
-    Cette fonction vérifie si l'utilisateur à insérer des entrées valides pour la liste.
+    Cette fonction vérifie si l'utilisateur a  inséré des entrées valides pour la liste.
     :param liste_solution: la solution que le décodeur doit deviner
     :return: si non-valide, il l'annonce au joueur et au programme
     """
@@ -214,10 +214,10 @@ def verification_liste(liste_solution):
 
 def j2_verifie(board, liste_solution, round):
     """
-    Fonction qui corrige la devinette du decodeur
+    Fonction qui corrige la devinette du décodeur.
     :param board: La table du jeu que le décodeur peut voir et joue avec
     :param liste_solution: La combinaison solution du codificateur
-    :param round: Le rond du jeu
+    :param round: La partie actuelle du jeu
     :return: Nouvelle table de jeu contenant la devinette du décodeur et la correction du codificateur
     """
     count_rouge = 0 #le nombre de bonnes couleurs au bon endroit
@@ -233,10 +233,10 @@ def j2_verifie(board, liste_solution, round):
 
 def verifier_fin(board, liste_solution, round):
     """
-    Fonction qui vérifie si le jeu est fini
+    Fonction qui vérifie si le jeu est fini.
     :param board: La table du jeu qu'on joue avec
     :param liste_solution: La solution du codificateur
-    :param liste_solution: Le rond du jeux
+    :param round: La partie actuelle du jeu
     :return: La fin ou continuation du jeu
     """
     board_check = [] #board temporaire contenant seulement la ligne horizontale correspondant au round
