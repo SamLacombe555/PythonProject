@@ -24,7 +24,7 @@ board = [
 liste_couleurs_random = ['J', 'B', 'R', 'V', 'O', 'N', 'M', 'T', 'G']
 
 
-def test_noms():
+def test_noms():#will
     """
     Cette fonction compare le nom que l'utilisateur a entré et le nom affiché dans nom_codificateur.
     :return:
@@ -33,7 +33,7 @@ def test_noms():
     str_input_joueur = "Sam"
     assert nom_codificateur == str_input_joueur
 
-def test_couleurs_solution():
+def test_couleurs_solution():#will
     """
     Cette fonction prévient d'avoir 2 couleurs pareilles dans la liste solution.
     :return:
@@ -48,7 +48,7 @@ def test_couleurs_solution():
 
 
 
-def test_pions():
+def test_pions():#will/sam
     """
     Cette fonction teste si le nombre de pions rouges et blancs est exact.
     :return:
@@ -89,7 +89,7 @@ def test_pions():
 
 ]
 
-def test_win_condition():
+def test_win_condition():#will
     """
     Cette fonction vérifie si la partie a été gagné par le joueur décodeur.
     :return:
