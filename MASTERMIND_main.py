@@ -130,6 +130,5 @@ if __name__ == "__main__":
         print(f"{nom_decodeur} a gagné en {round} essais!")
     elif win_condition == 2:
         print(f"Perdu. La solution était {liste_solution}")
-    print("Rejouer? O/N")
 
 

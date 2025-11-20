@@ -14,23 +14,3 @@ Nettoyer le repository sur GitHub, il contient des fichiers qui ne font pas part
 Il y a aussi des parties qui semblent dédoublées, je ne sais pas lesquelles regarder.
 Organiser le code utile dans un ou des fichiers de modules pour les fonctions, et un fichier pour le programme principal.
 """
-
-# ANSI escape codes for colors
-RED = "\033[91m"
-GREEN = "\033[92m"
-BLUE = "\033[94m"
-RESET = "\033[0m"  # Reset to default color
-
-# Create a list with colored strings
-colored_list = [
-    f"{RED}Apple{RESET}",
-    f"{GREEN}Banana{RESET}",
-    f"{BLUE}Blueberry{RESET}"
-]
-
-# Print each element
-for item in colored_list:
-    print(item)
-
-# You can still access the raw string with color codes
-print("\nRaw list data:", colored_list)

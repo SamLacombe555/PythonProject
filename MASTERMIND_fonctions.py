@@ -89,24 +89,24 @@ def assign_couleurs(board, round):
     for i in range(4):
         deux_couleurs = True
         while deux_couleurs == True:
-            choix = int(input(f"Décidez quelle sera la {i+1}e couleur :"))
-            if choix == 1:
+            choix = input(f"Décidez quelle sera la {i+1}e couleur :")
+            if choix == '1':
                 choix_c = "J"
-            elif choix == 2:
+            elif choix == '2':
                 choix_c = "B"
-            elif choix == 3:
+            elif choix == '3':
                 choix_c = "R"
-            elif choix == 4:
+            elif choix == '4':
                 choix_c = "V"
-            elif choix == 5:
+            elif choix == '5':
                 choix_c = "O"
-            elif choix == 6:
+            elif choix == '6':
                 choix_c = "N"
-            elif choix == 7:
+            elif choix == '7':
                 choix_c = "M"
-            elif choix == 8:
+            elif choix == '8':
                 choix_c = "T"
-            elif choix == 9:
+            elif choix == '9':
                 choix_c = "G"
             else:
                 choix_c ="_"
