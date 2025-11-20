@@ -92,6 +92,7 @@ if __name__ == "__main__":
         if choix == "1":
             liste_solution = ordinateur_solution(liste_couleurs_random)
             nom_decodeur = "Le décodeur"
+            nom_codificateur = "Le CPU"
             break
         elif choix == "2":
             nom_codificateur = str(input("Qui sera le joueur codificateur? Veuillez taper son nom, et ensuite Entrée."))
