@@ -107,7 +107,7 @@ if __name__ == "__main__":
             menu_couleurs()
             choisir_solution(liste_solution)
             print(liste_solution)
-            if not verification_liste(liste_solution):
+            if verification_liste(liste_solution) == False:
                 break
             print("Cette liste est-elle correcte? Répondez avec O ou N.")
             input_verification = input()
