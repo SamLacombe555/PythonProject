@@ -86,7 +86,7 @@ win_condition = 0 #condition de victoire
 
 if __name__ == "__main__":
 
-    while True:
+    while True: #will
         intro_menu_choix_joueurs()
         choix = input()
         if choix == "1":
@@ -124,7 +124,7 @@ if __name__ == "__main__":
         elif choix == "3":
             comment_jouer()
 
-    while win_condition == 0:
+    while win_condition == 0: #sam
         afficher_jeu(board)
         menu_couleurs()
         board = assign_couleurs(board, round)

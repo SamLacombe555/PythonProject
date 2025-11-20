@@ -70,7 +70,7 @@ import time, random
 
 
 
-def afficher_jeu(board_j1):
+def afficher_jeu(board_j1): #sam
     """
     Fonction qui affiche la table de jeu
     :param board_j1: La table de jeu
@@ -79,7 +79,7 @@ def afficher_jeu(board_j1):
     for ligne in board_j1:
         print(ligne)
 
-def assign_couleurs(board, round):
+def assign_couleurs(board, round): #sam
     """
     Fonction qui modifie le board du décodeur avec ses choix de couleurs.
     :param board: Table de jeu du décodeur avec ses devinettes
@@ -122,7 +122,7 @@ def assign_couleurs(board, round):
                 deux_couleurs = False
     return board
 
-def intro_menu_choix_joueurs():
+def intro_menu_choix_joueurs(): #will
     """
     Cette fonction fait apparaître le menu du jeu.
     :return:
@@ -145,7 +145,7 @@ def intro_menu_choix_joueurs():
     print("-" * 10)
     print("Veuillez taper un chiffre entre 1 et 3, et ensuite Entrée.")
 
-def comment_jouer():
+def comment_jouer(): #will
     """
     Cette fonction fait apparaître le tutoriel du jeu.
     :return:
@@ -155,7 +155,7 @@ def comment_jouer():
     print("-" * 10)
     input(print("Veuillez taper Entrée pour retourner au menu."))
 
-def choisir_solution(liste_solution):
+def choisir_solution(liste_solution): #sam
     """
     Cette fonction permet de choisir la combinaison de 4 couleurs avec l'aide de la liste en menu_couleurs().
     :param liste_solution: la solution qui sera choisie par le codificateur
@@ -195,7 +195,7 @@ def choisir_solution(liste_solution):
 
     return liste_solution
 
-def menu_couleurs():
+def menu_couleurs(): #will
     """
     Cette fonction fait apparaître le choix de combinaison de couleurs.
     :return:
@@ -212,7 +212,7 @@ def menu_couleurs():
     print ("9 - Gris")
     print("-" * 10)
 
-def ordinateur_solution(liste_couleurs_random):
+def ordinateur_solution(liste_couleurs_random):#will/sam
     """
     Cette fonction génère une solution au hasard.
     :param liste_couleurs_random: la liste de couleurs qui peuvent être choisi par hasard
@@ -225,7 +225,7 @@ def ordinateur_solution(liste_couleurs_random):
         liste_couleurs_random.remove(i)
     return liste_solution
 
-def verification_liste(liste_solution):
+def verification_liste(liste_solution): #will
     """
     Cette fonction vérifie si l'utilisateur a  inséré des entrées valides pour la liste.
     :param liste_solution: la solution que le décodeur doit deviner
@@ -235,7 +235,7 @@ def verification_liste(liste_solution):
         print("Votre liste est invalide. Veuillez redémarrer le programme et réessayer.")
         return False
 
-def j2_verifie(board, liste_solution, round):
+def j2_verifie(board, liste_solution, round): #sam
     """
     Fonction qui corrige la devinette du décodeur.
     :param board: La table du jeu que le décodeur peut voir et joue avec
@@ -254,7 +254,7 @@ def j2_verifie(board, liste_solution, round):
     board[round-1].append(f"{count_rouge} rouge(s), {count_blanc} blanc(s)")
     return board
 
-def verifier_fin(board, liste_solution, round):
+def verifier_fin(board, liste_solution, round): #sam
     """
     Fonction qui vérifie si le jeu est fini.
     :param board: La table du jeu qu'on joue avec
