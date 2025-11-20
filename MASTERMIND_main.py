@@ -29,6 +29,8 @@ Programme principal:
         si choix est égal à 2:
             nom_codificateur égal str(input())
             nom_decodeur égal str(input())
+            vérifier si nom_codificateur et nom_decodeur sont pareils
+                si oui, boucle
             joueur_versus_joueur()
             menu_couleurs()
             choisir_solution(liste_solution)
@@ -94,6 +96,10 @@ if __name__ == "__main__":
         elif choix == "2":
             nom_codificateur = str(input("Qui sera le joueur codificateur? Veuillez taper son nom, et ensuite Entrée."))
             nom_decodeur = str(input("Qui sera le joueur décodeur? Veuillez taper son nom, et ensuite Entrée."))
+            while nom_codificateur == nom_decodeur:
+                print("Le joueur codificateur et le joueur décodeur ne sont pas supposés être la même personne! Veuillez choisir un nom différent.")
+                nom_decodeur = str(input())
+
             print(f"{nom_decodeur}, veuillez vous retourner et ne pas regarder l'écran.")
             time.sleep(5)
             print(f"{nom_codificateur}, en vous servant du menu suivant, veuillez choisir une solution composée d'une combinaison de 4 couleurs.")
@@ -129,6 +135,6 @@ if __name__ == "__main__":
         print("-" * 10)
         print(f"{nom_decodeur} a gagné en {round} essais!")
     elif win_condition == 2:
-        print(f"Perdu. La solution était {liste_solution}")
+        print(f"Perdu! La solution était {liste_solution}. {nom_codificateur} est le vainqueur!")
 
 
